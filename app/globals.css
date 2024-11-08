@@ -19,3 +19,31 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer utilities {
+  .circle-border {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: transparent; /* Set inner background color if needed */
+  }
+  .circle-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    padding: 3px; /* Space between border and inner circle */
+    background: conic-gradient(
+      #FF3737,         /* First color */
+      transparent 33% 36%, /* Gap */
+      #1CBABA,      /* Second color */
+      transparent 66% 69%, /* Gap */
+      #FFB700     /* Third color */
+    );
+    -webkit-mask: content-box, border-box;
+    mask: content-box, border-box;
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+  }
+}
