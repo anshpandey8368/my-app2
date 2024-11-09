@@ -2,8 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import { IoEye, IoCheckbox } from "react-icons/io5";
 import { IoMdCheckboxOutline } from "react-icons/io";
-import { FaComments, FaStar } from "react-icons/fa6";
-import { FaRegComments } from "react-icons/fa";
+import { FaComments, FaStar ,FaCheck } from "react-icons/fa6";
+import { FaRegComments , FaArrowRight } from "react-icons/fa";
 import { TbChecklist } from "react-icons/tb";
 import { BsDot } from "react-icons/bs";
 import { CiCircleInfo } from "react-icons/ci";
@@ -61,7 +61,7 @@ function Box() {
   const boxes = [];
   for (let i = 1; i <= 15; i++) {
     boxes.push(
-      <div key={i} className="box-item" style={{backgroundColor: i % 2 === 0 ? 'var(--text-color)' : 'transparent'}}>
+      <div key={i} className="box-item" style={{backgroundColor: i % 2 === 0 ? 'var(--Light-theme-color)' : 'transparent'}}>
         video {i}
       </div>
     );
@@ -163,7 +163,7 @@ function Profile() {
         </div>
 
         <button className='edit-profile-btn'>
-          Edit Profile
+          Edit Profile <FaArrowRight className="btn-icon" />
         </button>
         <p className='location'>India</p>
 
@@ -200,7 +200,12 @@ function Profile() {
           <div className='stats-card'>
             <div className='circle-container'>
               <div className="circle-border">
-                <div className='inner-circle'></div>
+                <div className='inner-circle'>
+                </div>
+              </div>
+              <div className='circle-text'>
+              <div><span className='solved'>288</span>/3344</div>
+              <div className='solved-text'><FaCheck className='check-icon'/> Solved</div>
               </div>
             </div>
             <div className='difficulty-stats'>

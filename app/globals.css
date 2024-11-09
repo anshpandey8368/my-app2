@@ -55,3 +55,32 @@ a {
     mask-composite: exclude;
   }
 
+  /* For dark mode */
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar {
+    background-color: var(--backgroundColorDark);
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--backgroundColorDark);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-color: var(--backgroundColorDark);
+  }
+
+  * {
+    scrollbar-color: var(--theme-color) var(--backgroundColorDark);
+  }
+}
+
+/* Optional: Hide scrollbar when not scrolling */
+::-webkit-scrollbar-thumb {
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  opacity: 1;
+}
+
