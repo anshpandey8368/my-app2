@@ -204,7 +204,7 @@ function Profile() {
                 </div>
               </div>
               <div className='circle-text'>
-              <div><span className='solved'>288</span>/3344</div>
+              <div className='circle-text-top'><span className='solved'>288</span>/3344</div>
               <div className='solved-text'><FaCheck className='check-icon'/> Solved</div>
               </div>
             </div>
